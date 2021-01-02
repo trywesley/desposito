@@ -6,10 +6,8 @@ module.exports = (message, desposito) => {
     const prefix = message.content.trim().split(/ +/)[0]
     const data = {
         message: message,
-        prefix: prefix, 
-        phrases: messages
+        prefix: prefix
     }
-console.log(messages)
         
     if(["desposito", "despo", "dp"].includes(prefix)) {
         data.command = message.content.trim().split(/ +/).slice(1)[0]

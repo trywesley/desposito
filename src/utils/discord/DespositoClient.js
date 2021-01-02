@@ -1,5 +1,5 @@
 const { Client } = require("discord.js")
-const proto = require("../../strc/prtyps/desply")
+const PROTO = require("../../strc/prtyps/desply")
 
 module.exports = class DespoitoClient extends Client {
 	constructor(token) {
@@ -10,7 +10,7 @@ module.exports = class DespoitoClient extends Client {
 		this.commands = new Map()
                 this.aliases = new Map()
 
-                proto()
+                PROTO.load()
 	}
 
 	get rssUsage () {

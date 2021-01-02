@@ -9,5 +9,5 @@ module.exports = (ind, reference) => {
     }
 
     const propArray = ind.split(".")
-    return messages[propArray[0]][propArray[1]]
+    return propArray[1] ? messages[propArray[0]][propArray[1]] : messages[propArray[0]]
 }

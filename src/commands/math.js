@@ -19,20 +19,20 @@ module.exports = {
                     correct += 1
                     regenerate()
                     colected.delete()
-                    message.edit(data.phrases("math_congrats", maths))
+                    message.edit(data.phrases("math.congrats", maths))
                 } else {
-                    message.edit(data.phrases("math_fail", correct))
+                    message.edit(data.phrases("math.fail", correct))
                     colected.delete()
                 }
              })
              collector.on("end", (col, reason) => {
                  if(reason === "time") {
-                     message.edit(data.phrases("math_timeout", correct))
+                     message.edit(data.phrases("math.timeout", correct))
                  }
              })
         }
 
         regenerate()
-        const message = await data.message.channel.send(data.phrases("math_first", maths))
+        const message = await data.message.channel.send(data.phrases("math.first", maths))
     }
 }

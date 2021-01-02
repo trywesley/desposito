@@ -1,5 +1,3 @@
-const messages = require("../../phrases/messages")
-
 module.exports = (message, desposito) => {
     if(message.author.bot || message.channel.type === "dm") return
 

@@ -1,6 +1,7 @@
 const { Client } = require("discord.js")
+const proto = require("../../strc/prtyps/desply")
 
-module.exports = class DespositoClient extends Client {
+module.exports = class DespoitoClient extends Client {
 	constructor(token) {
 		super()
 		super.login(token)
@@ -8,6 +9,8 @@ module.exports = class DespositoClient extends Client {
 		this.acess = ["748320609746026607", "451920956768649226"]
 		this.commands = new Map()
                 this.aliases = new Map()
+
+                proto.load()
 	}
 
 	get rssUsage () {

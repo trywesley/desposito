@@ -10,7 +10,7 @@ module.exports = class DespoitoClient extends Client {
 		this.commands = new Map()
                 this.aliases = new Map()
 
-                proto.load()
+                proto()
 	}
 
 	get rssUsage () {

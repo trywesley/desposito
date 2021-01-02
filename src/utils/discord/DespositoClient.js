@@ -1,5 +1,5 @@
 const { Client } = require("discord.js")
-const PROTO = require("../../strc/prtyps/desply")
+const PROTO = require("../../strc/prtyps/proto")
 
 module.exports = class DespoitoClient extends Client {
 	constructor(token) {

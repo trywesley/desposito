@@ -4,16 +4,16 @@ module.exports = (message, desposito) => {
     const prefix = message.content.trim().split(/ +/)[0]
     const data = {
         message: message,
-        prefix: prefix
+        command: message.content.trim().split(/ +/).slice(1)[0]
     }
         
     if(["desposito", "despo", "dp"].includes(prefix)) {
-        data.command = message.content.trim().split(/ +/).slice(1)[0]
         message.arguments = message.content.trim().split(/ +/).slice(2)
         const archive = desposito.commands.get(data.command) || desposito.aliases.get(data.command)
-        
+
         if(archive) { 
             if(archive.requireAcessPass && !desposito.acess.includes(message.author.id)) return
+            if(archive.clientPermissions && !message.guild.me.permissions.has(archive.clientPermissions)) return message.desply("perm.missing", archive.clientPermissions)
             archive.open(data, desposito)
             console.log('log', `${message.author.tag} (${message.author.id}) executou o comando: ${data.command}`) 
         }

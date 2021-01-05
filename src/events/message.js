@@ -13,7 +13,6 @@ module.exports = (message, desposito) => {
 
         if(archive) { 
             if(archive.requireAcessPass && !desposito.acess.includes(message.author.id)) return
-console.log(archive.clientPermissions)
             if(archive.clientPermissions && !message.guild.me.permissions.has(archive.clientPermissions)) return message.desply("perm.missing", archive.clientPermissions)
             archive.open(data, desposito)
             console.log('log', `${message.author.tag} (${message.author.id}) executou o comando: ${data.command}`) 

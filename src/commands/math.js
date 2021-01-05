@@ -1,5 +1,6 @@
 module.exports = {
     aliase: "tabuada m",
+    clientPermissions: ["MANAGE_MESSAGES"],
     async open(data, desposito) {
 
         let correct = 0

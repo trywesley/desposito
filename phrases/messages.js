@@ -5,6 +5,9 @@ module.exports = (ind, reference) => {
             "first": `> 🥸 Tabuada!\n> Acerte o máximo possível e ganhe absolutamente nada.\n\nQuanto é: **${reference.one}x${reference.two}**?`,
             "fail": `:exploding_head: Woops! Você acertou **${reference}** vezes, boa sorte na próxima.`,
             "timeout": `:clock1230: O tempo acabou! Você acertou **${reference}** vezes, boa sorte na próxima.`
+        },
+        perm: {
+            "missing": `Permissões \`${reference.join(" | ")}\` em falta.`
         }
     }
 

@@ -1,4 +1,5 @@
 const util = require('util')
+const ar = []
 module.exports = {
     aliase: "e ev",
     requireAcessPass: true,

@@ -6,10 +6,10 @@ module.exports = class CountdownManager {
         const user = message.author
 
         if(cownLection.has(user.id)) {
-            const calc = time - Math.floor((Date.now() - cownLection.get(user.id)) / 1000)
+            const calc = cownLection.get(user.id) - Math.floor((Date.now() - cownLection.get(user.id)) / 1000)
             return message.channel.send("Countdown: " + calc + " segundo(s)")
         } else {
-            cownLection.set(user.id, Date.now())
+            cownLection.set(user.id, time)
             setTimeout(()  => {
                 cownLection.delete(user.id)
             }, time * 1000)

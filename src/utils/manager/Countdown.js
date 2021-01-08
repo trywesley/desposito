@@ -1,6 +1,5 @@
 const { Collection } = require("discord.js")
 const cownLection = new Collection()
-//yay
 
 module.exports = class CountdownManager {
     static verify (message, time) {    

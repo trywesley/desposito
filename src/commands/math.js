@@ -1,5 +1,6 @@
 module.exports = {
     aliase: "tabuada m",
+    countdown: 10,
     clientPermissions: ["MANAGE_MESSAGES"],
     async open(data, desposito) {
 

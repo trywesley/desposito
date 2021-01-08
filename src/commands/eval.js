@@ -1,7 +1,7 @@
 const util = require('util')
-const ar = []
 module.exports = {
     aliase: "e ev",
+    countdown: 0,
     requireAcessPass: true,
 
     async open(data, desposito)  {

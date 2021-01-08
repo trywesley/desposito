@@ -14,8 +14,7 @@ module.exports = (message, desposito) => {
         const archive = desposito.commands.get(data.command) || desposito.aliases.get(data.command)
 
         if(archive) { 
-            const isUserInCountdown = CountdownManager.verify(message, archive.countdown ? archive.countdown : 0)
-            if(isUserInCountdown) return
+            if(CountdownManager.verify(message, archive.countdown ? archive.countdown : 0)) return
             if(archive.requireAcessPass && !desposito.acess.includes(message.author.id)) return
             if(archive.clientPermissions && !message.guild.me.permissions.has(archive.clientPermissions)) return message.desply("perm.missing", archive.clientPermissions)
             archive.open(data, desposito)

@@ -1,5 +1,6 @@
 const { Client } = require("discord.js")
 const PROTO = require("../../strc/prtyps/proto")
+const firebase = require("../manager/Firebase")
 
 module.exports = class DespoitoClient extends Client {
 	constructor(token) {
@@ -8,6 +9,7 @@ module.exports = class DespoitoClient extends Client {
                 
 		this.acess = ["748320609746026607", "451920956768649226"]
 		this.commands = {}
+                this.database = firebase()
 
                 PROTO.load()
 	}

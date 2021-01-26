@@ -7,12 +7,13 @@ module.exports = (desposito) => {
         if(command.aliase) {
             const aliases = command.aliase.split(" ")
             aliases.forEach(aliase => {
-                console.log("Command", "Aliase " + aliase + " adicionada")
-                desposito.aliases.set(aliase, commandName)
+                Object.defineProperty(desposito.commands, aliase, { enumerable: false, writable: true })
+                command.name = commandName
+                desposito.commands[aliase] = command
             })
         }
     
-        desposito.commands.set(commandName, command)
+        desposito.commands[commandName] = command
         console.log("Command", "Carregamento do comando " + f + " concluido\n")
     })
 }

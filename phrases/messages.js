@@ -19,8 +19,12 @@ module.exports = (ind, reference) => {
     if(ind.startsWith("commands")) {
         messages.commands = {
             math: {
-                description: "teste",
-                usage: "t3ste2"
+                description: "Exercite o seu cérebro com alguns simples cálculos matemáticos.",
+                usage: "desposito math"
+            },
+            eval: {
+                description: "É apenas para os desenvolvedores, vaza!",
+                usage: "desposito eval <argument>"
             }
         }
     }

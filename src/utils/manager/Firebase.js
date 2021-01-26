@@ -1,6 +1,6 @@
 const firebase = require("firebase")
 
-module.exports = async () => {
+module.exports = () => {
 const fconfig = {
     apiKey: "AIzaSyCLAobFvnSQcmkBlSqP0LWnC3lQblWag7E",
     authDomain: "wweberbase.firebaseapp.com",

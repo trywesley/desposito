@@ -14,9 +14,9 @@ module.exports = class DespoitoClient extends Client {
 	}
         
         resolveCommand (arg) { 
-           const probableCommand = desposito.commands.get(arg) || desposito.aliases.get(arg)
+           const probableCommand = this.commands.get(arg) || this.aliases.get(arg)
            if(typeof probableCommand === "string") {
-               const realCommand = desposito.commands.get(probableCommand)
+               const realCommand = this.commands.get(probableCommand)
                realCommand.name = probableCommand
                return realCommand
            } else if(typeof probableCommand === "object") {

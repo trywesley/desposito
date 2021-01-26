@@ -16,6 +16,7 @@ module.exports = (message, desposito) => {
         if(archive) { 
             if(CountdownManager.verify(message, archive.countdown ? archive.countdown : 0)) return
             if(archive.requireAcessPass && !desposito.acess.includes(message.author.id)) return
+            if(data.message.arguments[0] === "🤔") return data.message.helply(data.command)
             if(archive.clientPermissions && !message.guild.me.permissions.has(archive.clientPermissions)) return message.desply("perm.missing", archive.clientPermissions)
             archive.open(data, desposito)
             console.log('log', `${message.author.tag} (${message.author.id}) executou o comando: ${data.command}`) 

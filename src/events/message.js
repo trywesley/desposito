@@ -11,7 +11,7 @@ module.exports = (message, desposito) => {
         
     if(["desposito", "despo", "dp"].includes(prefix)) {
         message.arguments = message.content.trim().split(/ +/).slice(2)
-        const archive = desposito.commands.get(data.command) || desposito.aliases.get(data.command)
+        const archive = desposito.resolveCommand(data.command)
 
         if(archive) { 
             if(CountdownManager.verify(message, archive.countdown ? archive.countdown : 0)) return

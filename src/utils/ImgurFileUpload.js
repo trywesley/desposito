@@ -9,5 +9,5 @@ module.exports = function upload(url) {
     .then (res => res.json())
     .then(js => js.data)
      
-     return data.url
+     return data.link
 }

@@ -1,4 +1,4 @@
-module.exports = function upload(url) => {
+module.exports = function upload(url) {
     const data = fetch("https://api.imgur.com/3/image", {
         method: 'POST',
         headers: { 

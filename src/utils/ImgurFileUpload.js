@@ -8,6 +8,7 @@ module.exports = function upload(url) {
     })
     .then (res => res.json())
     .then(js => js.data)
+    .then(data => data.link)
      
-     return data.link
+     return data
 }

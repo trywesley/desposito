@@ -1,5 +1,6 @@
 const dc = require("discord.js")
 const moment = require("moment")
+moment.locale("pt-br")
 
 module.exports = class DespositoEmbed extends dc.MessageEmbed {
     constructor(message = null) {

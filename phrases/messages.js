@@ -1,6 +1,11 @@
 module.exports = (ind, reference) => {
     const messages = new Object()
-        
+    if(ind.startsWith("general")) {
+        messages.general = {
+            "no_user": "O usuário especificado é inválido."
+        }
+    }
+
     if(ind.startsWith("math")) {
         messages.math = {
             "congrats": `> 🥸 Tabuada!\n> Acerte o máximo possível e ganhe absolutamente nada.\n\nParabéns você acertou! Mas quanto é **${reference.one}x${reference.two}**?`,

@@ -23,7 +23,7 @@ module.exports = class DespositoEmbed extends dc.MessageEmbed {
                     name: options.tag,
                     id: options.id,
                     created: moment(options.createdAt).format("LL"),
-                    status: options.presence.status === "offline" ? "O usuário está offline." : `O usuário está ${object[options.presence.status]}, conectado pelo ${object[Object.keys(user.presence.clientStatus)[0]]}.`
+                    status: options.presence.status === "offline" ? "O usuário está offline." : `O usuário está ${object[options.presence.status]}, conectado pelo ${object[Object.keys(options.presence.clientStatus)[0]]}.`
                 }
 
                 this

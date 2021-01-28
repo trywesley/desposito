@@ -39,7 +39,7 @@ module.exports = {
             const collector = message.createReactionCollector(filter)
             collector.on("collect", (reaction, user) => {
                 if(reaction.emoji.name ===  "➕") { page++ } else { page-- }
-                avatars[page] ? (embed.setImage(avatars[page]), message.edit(embed)) : return
+                avatars[page] ? (embed.setImage(avatars[page]), message.edit(embed)) : ""
                 if(timeout) clearTimeout(timeout)
                 timeout = setTimeout(() => {
                     collector.stop()

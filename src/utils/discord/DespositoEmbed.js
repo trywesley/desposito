@@ -19,7 +19,7 @@ module.exports = class DespositoEmbed extends dc.MessageEmbed {
                     web: "navegador"
                 }
 
-                const user = {
+                const userr = {
                     name: options.tag,
                     id: options.id,
                     created: moment(options.createdAt).format("LL"),
@@ -27,7 +27,7 @@ module.exports = class DespositoEmbed extends dc.MessageEmbed {
                 }
 
                 this
-                .setDescription(`\`${user.name} (ID ${user.id})\` entrou para o discord no dia ${user.created}. ${user.status}`)
+                .setDescription(`\`${userr.name} (ID ${userr.id})\` entrou para o discord no dia ${userr.created}. ${userr.status}`)
                 return this
             break
         }

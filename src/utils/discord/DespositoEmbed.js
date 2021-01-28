@@ -1,48 +1,23 @@
 const dc = require("discord.js")
+const moment = require("moment")
 
 module.exports = class DespositoEmbed extends dc.MessageEmbed {
     constructor(message = null) {
         super()
-        this.messageReference = message
-        this.setColor(process.env.NATIVE_COLOR)
     }
 
     selectPreset(p, options = {}) {
         switch (p) {
-            case "music_play":
-                this
-                .setAuthor(options.song.authorName)
-                .setColor("#00BFFF")
-                .setTitle(options.song.title)
-                .setURL(options.song.url)
-                .setDescription(options.song.desc)
-                .setImage(options.song.image)
-                .setFooter("Duração: " + options.song.time)
-                return this
-            break
+            case "userinfo":
+                const user = {
+                    name: options.tag,
+                    id: options.id,
+                    created: moment(options.createdAt).format("LL"),
+                    status: options.presence.status === "offline" ? "O usuário está offline." : `O usuário está ${object[options.presence.status]}, conectado pelo ${object[Object.keys(user.presence.clientStatus)[0]]}.`
+                }
 
-            case "music_np":
                 this
-                .setAuthor(options.song.authorName)
-                .setColor("#FFFF00")
-                .setTitle(options.song.title)
-                .setURL(options.song.url)
-                .setDescription(options.song.desc)
-                .setImage(options.song.image)
-                return this
-            break
-
-            case "queue":
-                this
-                .setAuthor(this.messageReference.guild.name, this.messageReference.guild.iconURL())
-                .setColor("#00BFFF")
-                return this
-            break
-
-            case "skip":
-                this
-                .setColor("#32CD32")
-                .setDescription(options.members.map(m => m.user).join("\n"))
+                .setDescription(`\`${user.name} (ID ${user.id})\` entrou para o discord no dia ${user.created}. ${user.status}`)
                 return this
             break
         }

@@ -28,8 +28,12 @@ module.exports = (ind, reference) => {
                 usage: "desposito math"
             },
             eval: {
-                description: "É apenas para os desenvolvedores, vaza!",
+                description: "É apenas para os desenvolvedores, então vaza!",
                 usage: "desposito eval <argument>"
+            },
+            user: {
+                description: "Consulte informações sobre um usuário.",
+                usage: "desposito user <user|id>"
             }
         }
     }

@@ -28,6 +28,7 @@ module.exports = class DespositoEmbed extends dc.MessageEmbed {
                 }
 
                 this
+                .setFooter("Clique na reação 🖼 para visualizar o histórico de avatares do usuário.")
                 .setDescription(`\`${userr.name} (ID ${userr.id})\` entrou para o discord no dia ${userr.created}. ${userr.status}`)
                 return this
             break

@@ -20,6 +20,7 @@
     "ffmpeg-static": "^4.2.7",
     "firebase": "^7.20.0",
     "fs": "0.0.1-security",
+    "moment": "2.29.1",
     "node-fetch": "^2.6.1",
     "opusscript": "0.0.7",
     "path": "^0.12.7",

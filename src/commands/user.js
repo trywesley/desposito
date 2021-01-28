@@ -14,6 +14,7 @@ module.exports = {
         .selectPreset("userinfo", user)
 
         const message = await data.message.channel.send(embed)
+        embed.setFooter("")
         const emoji = "🖼"
         message.react(emoji)
 

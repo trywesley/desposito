@@ -9,6 +9,16 @@ module.exports = class DespositoEmbed extends dc.MessageEmbed {
     selectPreset(p, options = {}) {
         switch (p) {
             case "userinfo":
+                const object = {
+                    online: "disponível",
+                    dnd: "ocupado",
+                    offline: "indisponível",
+                    idle: "ausente",
+                    mobile: "celular",
+                    desktop: "computador",
+                    web: "navegador"
+                }
+
                 const user = {
                     name: options.tag,
                     id: options.id,

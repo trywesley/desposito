@@ -10,6 +10,7 @@ module.exports = {
         function regenerate() {
             maths = {"one": Math.floor(Math.random() * (10-2) + 2), "two": Math.floor(Math.random() * (10-2) + 2)}
             maths.result = maths.one * maths.two
+            maths.stage = String(correct + 1)
             runCollector()
         }
 
@@ -19,7 +20,6 @@ module.exports = {
             collector.on("collect", async (colected) => {
                 if(colected.content == maths.result) {
                     correct += 1
-                    maths.stage = correct + 1
                     regenerate()
                     colected.delete()
                     message.desdit("math.congrats", maths)

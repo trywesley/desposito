@@ -19,17 +19,36 @@ module.exports = {
             collector.on("collect", async (colected) => {
                 if(colected.content == maths.result) {
                     correct += 1
+                    maths.stage = correct + 1
                     regenerate()
                     colected.delete()
                     message.desdit("math.congrats", maths)
                 } else {
-                    message.desdit("math.fail", correct)
+                    let userRecord = await desposito.database.get("Desposito/Users/" + data.message.author.id + "/math_record")
+                    if(userRecord && userRecord < correct || !userRecord) {
+                        desposito.database.update("Desposito/Users/" + data.message.author.id, { math_record: correct })
+                        userRecord = correct
+                    } 
+
+                    message.desdit("math.fail", {
+                        acerts: correct,
+                        record: userRecord
+                    })
                     colected.delete()
                 }
              })
-             collector.on("end", (col, reason) => {
+             collector.on("end", async (col, reason) => {
                  if(reason === "time") {
-                     message.desdit("math.timeout", correct)
+                     let userRecord = await desposito.database.get("Desposito/Users/" + data.message.author.id + "/math_record")
+                     if(userRecord && userRecord < correct || !userRecord) {
+                         desposito.database.update("Desposito/Users/" + data.message.author.id, { math_record: correct })
+                         userRecord = correct
+                     } 
+
+                     message.desdit("math.timeout", {
+                        acerts: correct,
+                        record: userRecord
+                    })
                  }
              })
         }

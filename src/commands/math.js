@@ -24,34 +24,31 @@ module.exports = {
                     colected.delete()
                     message.desdit("math.congrats", maths)
                 } else {
-                    let userRecord = await desposito.database.get("Desposito/Users/" + data.message.author.id + "/math_record")
-                    if(userRecord && userRecord < correct || !userRecord) {
-                        desposito.database.update("Desposito/Users/" + data.message.author.id, { math_record: correct })
-                        userRecord = correct
-                    } 
-
-                    message.desdit("math.fail", {
-                        acerts: correct,
-                        record: userRecord
-                    })
+                    sendGameOver("fail")
                     colected.delete()
                 }
              })
              collector.on("end", async (col, reason) => {
                  if(reason === "time") {
-                     let userRecord = await desposito.database.get("Desposito/Users/" + data.message.author.id + "/math_record")
-                     if(userRecord && userRecord < correct || !userRecord) {
-                         desposito.database.update("Desposito/Users/" + data.message.author.id, { math_record: correct })
-                         userRecord = correct
-                     } 
-
-                     message.desdit("math.timeout", {
-                        acerts: correct,
-                        record: userRecord
-                    })
+                     sendGameOver("timeout")
+                     colected.delete()
                  }
              })
-        }
+         }
+
+         async function sendGameOver(type) {
+             let userRecord = await desposito.database.get("Desposito/Users/" + data.message.author.id + "/math_record")
+             if(userRecord && userRecord < correct || !userRecord) {
+                 desposito.database.update("Desposito/Users/" + data.message.author.id, { math_record: correct })
+                 userRecord = correct
+             } 
+
+             message.desdit("math." + type, {
+                 acerts: correct,
+                 record: userRecord,
+                 correctResult: maths.result
+             })
+         }
 
         regenerate()
         const message = await data.message.desply("math.first", maths)

@@ -31,7 +31,6 @@ module.exports = {
              collector.on("end", async (col, reason) => {
                  if(reason === "time") {
                      sendGameOver("timeout")
-                     colected.delete()
                  }
              })
          }

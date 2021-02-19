@@ -8,7 +8,7 @@ module.exports = {
     
         let timeout
         const user = data.message.arguments[0] ? desposito.users.cache.get(data.message.arguments[0].replace(/[!@<>]/g, "")) : data.message.author
-        if(!user) return data.message.desply("general.no_user")
+        if(!user) return data.message.desply("general#no_user")
 
         const embed = new DespositoEmbed()
         .selectPreset("userinfo", user)
@@ -24,7 +24,7 @@ module.exports = {
             r.remove()
             let avatars = await desposito.database.get("Desposito/Users/" + user.id + "/Avatars")
             if(!avatars) {
-                embed.setDescription("Nenhum avatar encontrado.")
+                embed.setDescription(data.phrases("general#no_avatar"))
                 message.edit(embed)
             }
             avatars = Object.values(avatars)

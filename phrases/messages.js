@@ -5,7 +5,6 @@ module.exports = (ind, reference) => {
             "no_user": "O usuário especificado é inválido."
         }
     }
-
     if(ind.startsWith("math")) {
         messages.math = {
             "congrats": `> 🥸 Tabuada!\n> Acerte o máximo possível e ganhe absolutamente nada.\n\n**${reference.stage}**: Parabéns você acertou! Mas quanto é **${reference.one}x${reference.two}**?`,

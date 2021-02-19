@@ -13,7 +13,7 @@ module.exports = function getPhrase(dir, value = undefined) {
         const matches = saveValue.match(regex)
         matches.forEach(m => { 
             const value = reference[m.replace(/[{}]/g, "")]
-            saveValue = saveValue.replace(m, v)
+            saveValue = saveValue.replace(m, value)
         })
     }
     return saveValue 

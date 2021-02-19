@@ -22,7 +22,7 @@ module.exports = {
                     correct += 1
                     regenerate()
                     colected.delete()
-                    message.desdit("math.congrats", maths)
+                    message.desdit("commands#math.congrats", maths)
                 } else {
                     sendGameOver("fail")
                     colected.delete()
@@ -42,7 +42,7 @@ module.exports = {
                  userRecord = correct
              } 
 
-             message.desdit("math." + type, {
+             message.desdit("commands#math." + type, {
                  acerts: correct,
                  record: userRecord,
                  correctResult: maths.result
@@ -50,6 +50,6 @@ module.exports = {
          }
 
         regenerate()
-        const message = await data.message.desply("math.first", maths)
+        const message = await data.message.desply("commands#math.first", maths)
     }
 }

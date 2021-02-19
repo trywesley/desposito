@@ -1,0 +1,8 @@
+{
+    math: {
+        "congrats": `> 🥸 Tabuada!\n> Acerte o máximo possível e ganhe absolutamente nada.\n\n**{reference.stage}**: Parabéns você acertou! Mas quanto é **{reference.one}x{reference.two}**?`,
+        "first": `> 🥸 Tabuada!\n> Acerte o máximo possível e ganhe absolutamente nada.\n\n**{reference.stage}**: Quanto é: **{reference.one}x{reference.two}**?`,
+        "fail": `:exploding_head: Woops! O correto era **{reference.correctResult}**, você acertou **{reference.acerts}** vezes. O seu recorde é de **{reference.record}** acertos, boa sorte na próxima.`,
+        "timeout": `:clock1230: O tempo acabou! O correto era **{reference.correctResult}**, você acertou **{reference.acerts}** vezes. O seu recorde é de **{reference.record}** acertos, boa sorte na próxima.`
+    }
+}

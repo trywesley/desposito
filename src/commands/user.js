@@ -24,7 +24,7 @@ module.exports = {
             r.remove()
             let avatars = await desposito.database.get("Desposito/Users/" + user.id + "/Avatars")
             if(!avatars) {
-                embed.setDescription(data.phrases("general#no_avatar"))
+                embed.setDescription(data.phrase("general#no_avatar"))
                 message.edit(embed)
             }
             avatars = Object.values(avatars)

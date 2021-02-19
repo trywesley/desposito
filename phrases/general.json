@@ -1,4 +1,4 @@
 {
     "no_user": "O usuário especificado é inválido.",
-    "missing_permissions": `Permissões \`{reference}\` em falta.`
+    "missing_permissions": "Permissões `{reference}` em falta."
 }

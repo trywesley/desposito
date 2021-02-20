@@ -4,11 +4,13 @@ module.exports = {
     aliase: "userinfo ui",
     countdown: 5,
     clientPermissions: ["MANAGE_MESSAGES"],
+    requireMention: {
+        size: 1
+    },
     async open (data, desposito) {
     
         let timeout
-        const user = data.message.arguments[0] ? desposito.users.cache.get(data.message.arguments[0].replace(/[!@<>]/g, "")) : data.message.author
-        if(!user) return data.message.desply("general#no_user")
+        const user = data.mentions[0]
 
         const embed = new DespositoEmbed()
         .selectPreset("userinfo", user)

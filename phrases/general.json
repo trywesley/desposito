@@ -1,5 +1,6 @@
 {
     "no_user": "O usuário especificado é inválido.",
     "no_avatar": "Nenhum avatar encontrado.",
+    "incorrect_use": "Utilize o comando corretamente",
     "missing_permissions": "Permissões `{reference}` em falta."
 }

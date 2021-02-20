@@ -1,5 +1,6 @@
 const CountdownManager = require("../utils/manager/Countdown")
 const phraseManager = require("../../phrases/manager")
+const contentUserFind = require("../utils/contentUserFind")
 
 module.exports = (message, desposito) => {
     if(message.author.bot || message.channel.type === "dm") return
@@ -20,6 +21,13 @@ module.exports = (message, desposito) => {
             if(archive.requireAcessPass && !desposito.acess.includes(message.author.id)) return
             if(data.message.arguments[0] === "🤔") return data.message.helply(archive.name)
             if(archive.clientPermissions && !message.guild.me.permissions.has(archive.clientPermissions)) return message.desply("general#missing_permissions", archive.clientPermissions.join(" | "))
+
+            if(archive.requireMention) {
+                const users = contentUserFind(message, desposito, archive.requireMention)
+                if(!users) return message.desply("general#incorrect_use")
+                data.mentions = users
+            }
+                    
             archive.open(data, desposito)
             console.log('log', `${message.author.tag} (${message.author.id}) executou o comando: ${data.command}`) 
         }

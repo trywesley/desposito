@@ -1,6 +1,6 @@
 <p align="center">
- <img width="100px" src="https://res.cloudinary.com/anuraghazra/image/upload/v1594908242/logo_ccswme.svg" align="center" alt="Desposito" />
- <h2 align="center">Desposito</h2>
+ <img width="100px" src="https://github.com/trywesley/desposito/blob/master/assets/readme/discord.webp" align="center" alt="Desposito" />
+ <h2 align="center">Desposito Discord Bot</h2>
  <p align="center">A little project I did for fun!</p>
 </p>
   <p align="center">

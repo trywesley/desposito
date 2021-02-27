@@ -19,7 +19,7 @@
     <br />
   </p>
 </p>
-<p align="center"> If you have an idea or wish to make a recommendation, create an <a href="https://github.com/trywesley/desposito/issues/new">issue</a>!
+<p align="center"> If you have an idea or wish to make a recommendation, create an <a href="https://github.com/trywesley/desposito/issues/new/choose">issue</a>!
 
 # About the project
 I developed this project entirely by cell phone because I miss programming, since my computer burned. Some systems were inspired by some others, but everything was done my way and as I could. You can use whatever you want from my repository, but it would be really cool if you gave it a star or create a fork as a way to credit ~my poor~ work. Test before using, I do not guarantee to be error free.

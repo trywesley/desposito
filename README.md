@@ -13,7 +13,7 @@
     <a href="https://github.com/trywesley/desposito/network/members">
       <img alt="Forks" src="https://img.shields.io/github/forks/trywesley/desposito?color=9cf" />
     </a>
-    <a href="https://wikipedia.org/wiki/Licen%C3%A7a_MIT">
+    <a href="https://en.wikipedia.org/wiki/MIT_License">
       <img alt="License" src="https://img.shields.io/github/license/trywesley/desposito?color=9cf" />
     </a>
     <br />

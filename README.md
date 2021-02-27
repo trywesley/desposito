@@ -1,6 +1,6 @@
 <p align="center">
  <img width="100px" src="https://github.com/trywesley/desposito/blob/master/assets/readme/discord.webp" align="center" alt="Desposito" />
- <h2 align="center">Desposito Discord Bot</h2>
+ <h2 align="center">Discord Bot Desposito</h2>
  <p align="center">A little project I did for fun!</p>
 </p>
   <p align="center">
@@ -22,6 +22,6 @@
 <p align="center"> If you have an idea or wish to make a recommendation, create an <a href="https://github.com/trywesley/desposito/issues/new">issue</a>!
 
 # About the project
-I developed this project entirely by cell phone because I miss programming, since my computer burned. Some systems were inspired by some others, but everything was done my way and as I could. You can use whatever you want from my repository, but it would be really cool if you gave it a star or created a fork as a way to credit ~my poor~ work. Test before using, I do not guarantee to be error free.
+I developed this project entirely by cell phone because I miss programming, since my computer burned. Some systems were inspired by some others, but everything was done my way and as I could. You can use whatever you want from my repository, but it would be really cool if you gave it a star or create a fork as a way to credit ~my poor~ work. Test before using, I do not guarantee to be error free.
 
 Kisses 😚

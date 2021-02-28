@@ -24,8 +24,6 @@
 # About the project
 I developed this project entirely by cell phone because I miss programming, since my computer burned. Some systems were inspired by some others, but everything was done my way and as I could. You can use whatever you want from my repository, but it would be really cool if you gave it a star or create a fork as a way to credit ~my poor~ work. Test before using, I do not guarantee to be error free.
 
-Kisses 😚
-
 ## Colaborators
 <p align="left">
  <img width="30px" src="https://github.com/trywesley/desposito/blob/master/assets/credits/trywesley.png" align="center" alt="WesleyWeber"/>  <a href="https://github.com/trywesley">WesleyWeber</a> - Development

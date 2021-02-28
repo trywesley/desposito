@@ -25,10 +25,7 @@ module.exports = {
         collector.on("collect", async (r, u) => {
             r.remove()
             let avatars = await desposito.database.get("Desposito/Users/" + user.id + "/Avatars")
-            if(!avatars) {
-                embed.setDescription(data.phrase("general#no_avatar"))
-                message.edit(embed)
-            }
+            if(!avatars) return message.edit(embed.setDescription(data.phrase("general#no_avatar")))
             avatars = Object.values(avatars)
     
             let page = 0

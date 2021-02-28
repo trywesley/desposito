@@ -8,16 +8,16 @@ module.exports = {
         size: 1
     },
     async open (data, desposito) {
-    
+        const reactionsArray = ["➖", "➕"]
+        const emoji = "🖼"
         let timeout
-        const user = data.mentions[0]
 
+        const user = data.mentions[0]
         const embed = new DespositoEmbed()
         .selectPreset("userinfo", user)
 
         const message = await data.message.channel.send(embed)
         embed.setFooter("")
-        const emoji = "🖼"
         message.react(emoji)
 
         const filter = (r, u) => r.emoji.name === emoji && u.id === data.message.author.id
@@ -32,17 +32,20 @@ module.exports = {
             avatars = Object.values(avatars)
     
             let page = 0
-            embed.setImage(avatars[0])
+            embed.setImage(avatars[page])
             message.edit(embed)
-
-            const reactionsArray = ["➖", "➕"]
             reactionsArray.forEach(r => message.react(r))
 
             const filter = (r, u) => reactionsArray.includes(r.emoji.name) && u.id === data.message.author.id
             const collector = message.createReactionCollector(filter)
             collector.on("collect", (reaction, user) => {
-                if(reaction.emoji.name ===  "➕") { page++ } else { page-- }
-                avatars[page] ? (embed.setImage(avatars[page]), message.edit(embed)) : (page = 0, embed.setImage(avatars[page]), message.edit(embed))
+                reaction.emoji.name === "➕" ? page++ : page--
+                if(avatars.length === page) page = 0 
+                if(page < 0) page = avatars.length - 1
+
+                embed.setImage(avatars[page])
+                message.edit(embed)
+
                 if(timeout) clearTimeout(timeout)
                 timeout = setTimeout(() => {
                     collector.stop()
